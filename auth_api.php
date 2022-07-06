@@ -4,6 +4,7 @@ if (isset($_GET['delog'])) :
     session_start();
     unset($_SESSION['user']);
     unset($_SESSION['token']);
+    unset($_SESSION['expiration']);
     $response['response'] = "deconnection";
     $response['date'] = date('Y-m-d,H:i:s');
     $response['code'] = 200;
@@ -34,6 +35,7 @@ if ($res->num_rows > 0) :
     session_start();
     $_SESSION['user'] = $user['id_users'];
     $_SESSION['token'] = md5($user['login'] . time());
+    $_SESSION['expiration'] = time() + 1 * 60;
     $response['response'] = "Connecté";
     $response['token'] = $_SESSION['token'];
 else :

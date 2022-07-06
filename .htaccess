@@ -8,3 +8,9 @@ RewriteRule personnes$ personnes.php [L]
 # AUTH
 RewriteRule deconnect$ auth_api.php?delog [L]
 RewriteRule auth$ auth_api.php [L]
+# PRODUCT
+RewriteRule product/([0-9]+)$ product.php?id=$1 [L]
+RewriteRule product$ product.php [L]
+# CATEGORY
+RewriteRule category/([0-9]+)$ category.php?id=$1 [L]
+RewriteRule category$ category.php [L]

@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/config.php';
 require_once 'includes/headers.php';
+require "verif_auth.php";
 
 // PUT
 if ($_SERVER['REQUEST_METHOD'] == 'PUT') :
